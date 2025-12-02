@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Sistem CRUD dengan MySQL dan Node.js</title>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Sistem CRUD dengan MySQL dan Node.js</h1>
+            <p class="subtitle">Create, Read, Update, Delete - Manajemen Data Pengguna</p>
+        </header>
+        
+        <div class="app-container">
+            <div class="form-section">
+                <h2 id="form-title">Tambah Pengguna Baru</h2>
+                
+                <div class="error-message" id="error-message"></div>
+                <div class="success-message" id="success-message"></div>
+                
+                <form id="user-form">
+                    <input type="hidden" id="user-id">
+                    
+                    <div class="form-group">
+                        <label for="name">Nama Lengkap</label>
+                        <input type="text" id="name" placeholder="Masukkan nama lengkap" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" placeholder="Masukkan email" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="phone">Nomor Telepon</label>
+                        <input type="text" id="phone" placeholder="Masukkan nomor telepon">
+                    </div>
+                    
+                    <div class="btn-group">
+                        <button type="submit" class="btn-primary" id="submit-btn">Tambah Pengguna</button>
+                        <button type="button" class="btn-secondary" id="cancel-btn" style="display:none;">Batal</button>
+                    </div>
+                </form>
+                
+                <div class="status-bar">
+                    <div class="server-status">
+                        <span>Status Server:</span>
+                        <div class="status-indicator" id="server-status"></div>
+                        <span id="server-status-text">Mengecek...</span>
+                    </div>
+                    <button class="btn-secondary" onclick="refreshData()">Refresh Data</button>
+                </div>
+            </div>
+            
+            <div class="data-section">
+                <h2>Daftar Pengguna</h2>
+                
+                <div id="loading" class="loading">
+                    Memuat data...
+                </div>
+                
+                <div id="empty-message" class="empty-message" style="display:none;">
+                    <p>Tidak ada data pengguna.</p>
+                    <p style="margin-top: 10px; font-size: 14px;">Tambahkan pengguna baru menggunakan form di samping.</p>
+                </div>
+                
+                <table id="users-table" style="display:none;">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Nama</th>
+                            <th>Email</th>
+                            <th>Telepon</th>
+                            <th>Tanggal Dibuat</th>
+                            <th>Aksi</th>
+                        </tr>
+                    </thead>
+                    <tbody id="users-table-body">
+                        
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

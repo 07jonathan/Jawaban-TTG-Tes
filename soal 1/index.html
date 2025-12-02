@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Sederhana</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Form Pendaftaran</h1>
+        <form id="registrationForm">
+            <div class="form-grup">
+                <label for="fullName">Nama Lengkap</label>
+                <input type="text" name="fullName" id="fullName">
+                <div class="error" id="nameError">Nama lengkap harus diisi</div>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" name="email" id="email" required>
+                <div class="error" id="emailError">Format email tidak valid</div>
+            </div>
+
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" name="password" id="password">
+                <div class="error" id="passwordError">Password minimal 8 karakter</div>
+            </div>
+
+            <div class="form-group">
+                <label for="confirmPassword">Konfirmasi Password</label>
+                <input type="password" name="confirmPassword" id="confirmPassword">
+                <div class="error" id="confirmPasswordError">Password tidak cocok</div>
+            </div>
+
+            <button type="submit">Daftar</button>
+        </form>
+        <div class="success-message" id="successMessage">
+            Pendaftaran Berhasil!
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
